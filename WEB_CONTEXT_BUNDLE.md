@@ -74,7 +74,27 @@ This file is generated from repository truth and bounded for the web channel. It
       "web_status": "active"
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "artifacts": [],
+      "attempt_id": "attempt:um-amr-054-0038-compatible-triangulations-c0a29cc1-source-fidelity-01",
+      "claims": [],
+      "completed_at": null,
+      "generator": "trusted-rolling-source-admission-v1",
+      "inputs": [
+        "problem-library/records/canonical-problems.jsonl",
+        "https://www.unsolvedmath.com/problems/AMR-054-0038"
+      ],
+      "lifecycle": "planned",
+      "method": "discovery",
+      "objective": "Close the source-fidelity obligation before attempting the frozen root statement.",
+      "obligation_graph_id": "graph:um-amr-054-0038-compatible-triangulations-c0a29cc1-v1",
+      "problem_contract_sha256": "e627fe503d2e064e6803e2dcbf667808fe4125ad7276e669f5549c425de1193f",
+      "problem_id": "problem:um-amr-054-0038-compatible-triangulations-c0a29cc1",
+      "route_id": "route:um-amr-054-0038-compatible-triangulations-c0a29cc1-source-fidelity",
+      "started_at": "2026-09-06T15:37:58Z"
+    }
+  ],
   "failed_routes": [],
   "knowledge_operators": [
     {
@@ -203,77 +223,123 @@ This file is generated from repository truth and bounded for the web channel. It
       "source_id": "sagemath"
     }
   ],
-  "obligation_graphs": [],
+  "obligation_graphs": [
+    {
+      "attempt_id": "attempt:um-amr-054-0038-compatible-triangulations-c0a29cc1-source-fidelity-01",
+      "graph_id": "graph:um-amr-054-0038-compatible-triangulations-c0a29cc1-v1",
+      "obligations": [
+        {
+          "dependencies": [
+            "obligation:um-amr-054-0038-compatible-triangulations-c0a29cc1-statement-fidelity"
+          ],
+          "kind": "root_claim",
+          "obligation_id": "obligation:um-amr-054-0038-compatible-triangulations-c0a29cc1-root",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Is it true that every two sets of $n$ planar points in general position with the same number points on their convex hulls have compatible triangulations? Two triangulations are compatible if they have the same combinatorial structure, i.e., if their face lattices are isomorphic. For compatible triangulations $T_1$ and $T_2$ of point sets $S_1$ and $S_2$, there is a bijection $\\phi$ between the points such that $ijk$ is a triangle of $T_1$ empty of points of $S_1$ iff $\\phi(i) \\phi(j) \\phi(k)$ is a triangle of $T_2$ empty of points of $S_2$."
+          },
+          "statement_sha256": "bac99912504824a989fd0efaee640c9a1204cddc4403b578a2c760f4cf9a9197"
+        },
+        {
+          "dependencies": [],
+          "kind": "definition",
+          "obligation_id": "obligation:um-amr-054-0038-compatible-triangulations-c0a29cc1-statement-fidelity",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Verify against the cited source that the frozen statement is complete, current, untruncated, attribution-correct, and unambiguous enough for mathematical research; record any definition or quantifier gap without silently editing the contract."
+          },
+          "statement_sha256": "65f0b3d574bd6d837403149dab6434c0f571709f7eb5bb066c7e8774bad13f34"
+        }
+      ],
+      "root_obligation_id": "obligation:um-amr-054-0038-compatible-triangulations-c0a29cc1-root",
+      "route_id": "route:um-amr-054-0038-compatible-triangulations-c0a29cc1-source-fidelity"
+    }
+  ],
   "problem_contract": {
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "UnsolvedMath AMR-054-0038"
+    ],
     "allowed_axioms": [
-      "none"
+      "classical-mathematics",
+      "source-explicit-definitions-only"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "No assumptions beyond those explicitly present in the exact source statement are admitted.",
+      "Statement-faithfulness and current-status review must close before the root mathematical obligation can close."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "source-fidelity-review-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T15:37:58Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "Use the statement, notation, terminology, and quantifier scope exactly as given by the cited source record. No unstated normalization or strengthening is admitted; ambiguity blocks Result admission until a versioned ProblemContract update.",
+        "term": "source-native interpretation"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Source-native Computer Science problem. Mathematical objects and notation are exactly those explicitly present in the frozen source statement.",
       "objects": [
-        "template-placeholder"
+        "objects and notation explicitly named in the frozen source statement"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "00A05"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:um-amr-054-0038-compatible-triangulations-c0a29cc1",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
-        "variables": [
-          "replacement_problem"
-        ]
+        "domain": "truth of the exact frozen source statement under its explicit quantifiers",
+        "kind": "decide",
+        "variables": []
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset contributors (CC BY 4.0)",
+        "source_record_id": "unsolvedmath-amr-054-0038-cf80cc57c763",
+        "url": "https://www.unsolvedmath.com/problems/AMR-054-0038"
+      },
+      {
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset license",
+        "source_record_id": null,
+        "url": "https://creativecommons.org/licenses/by/4.0/"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "Is it true that every two sets of $n$ planar points in general position with the same number points on their convex hulls have compatible triangulations? Two triangulations are compatible if they have the same combinatorial structure, i.e., if their face lattices are isomorphic. For compatible triangulations $T_1$ and $T_2$ of point sets $S_1$ and $S_2$, there is a bijection $\\phi$ between the points such that $ijk$ is a triangle of $T_1$ empty of points of $S_1$ iff $\\phi(i) \\phi(j) \\phi(k)$ is a triangle of $T_2$ empty of points of $S_2$.",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "Compatible Triangulations",
+    "updated_at": "2026-09-06T15:37:58Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "e627fe503d2e064e6803e2dcbf667808fe4125ad7276e669f5549c425de1193f"
 }
 ```
